@@ -12,8 +12,6 @@ const Home: NextPage = () => {
   const onSubmit = ({ nome, projeto }: Record<string, string>) => {
     const results = generator({ nome, projeto });
     setIndicacoes(results);
-    // eslint-disable-next-line no-console
-    console.info(results);
   };
   return (
     <Flex

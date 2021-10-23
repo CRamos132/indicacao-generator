@@ -28,6 +28,11 @@ const getFromArray = (array: string[]) => {
 function createIndicacao({ nome, projeto }: IParams) {
   let indicacao = "";
   const hasIntro = Math.floor(Math.random() * 10) % 2 === 0;
+  const rareIndicacao = Math.floor(Math.random() * 100) === 73;
+  if (rareIndicacao) {
+    // eslint-disable-next-line nonblock-statement-body-position
+    return `:fast_parrot: :fast_parrot: :fast_parrot: :fast_parrot: @${nome} :fast_parrot: :fast_parrot: :fast_parrot: :fast_parrot:`;
+  }
   if (hasIntro) {
     const intro = getFromArray(intros);
     indicacao += intro;
