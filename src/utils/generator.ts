@@ -9,6 +9,7 @@ const comProjeto = [
   "arregaçar em",
   "DETONAR",
   "estar toda semana amassando",
+  "engolir task em",
 ];
 const semProjeto = [
   "amassar os gringo",
@@ -16,6 +17,7 @@ const semProjeto = [
   "sempre estar ajudando a galera",
   "ser essa pessoa incrível",
   "sempre tirar um tempo pra galera",
+  "ter me dado um help monstro",
 ];
 
 const getFromArray = (array: string[]) => {
