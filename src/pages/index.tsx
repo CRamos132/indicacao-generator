@@ -1,8 +1,9 @@
+import React, { useState } from "react";
 import type { NextPage } from "next";
-import { Flex, Box, Text, Input, Select, Button } from "@chakra-ui/react";
+// eslint-disable-next-line object-curly-newline
+import { Flex, Box, Text, Input, Button } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
 import generator from "../utils/generator";
-import { useState } from "react";
 import copyText from "../utils/copy";
 
 const Home: NextPage = () => {
@@ -11,6 +12,7 @@ const Home: NextPage = () => {
   const onSubmit = ({ nome, projeto }: Record<string, string>) => {
     const indicacao = generator({ nome, projeto });
     setIndicacoes([indicacao]);
+    // eslint-disable-next-line no-console
     console.info(indicacao);
   };
   return (
