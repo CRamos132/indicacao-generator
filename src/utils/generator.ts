@@ -4,11 +4,18 @@ interface IParams {
 }
 
 const intros = ["Queria indicar", "Vou indicar", "Indicando"];
-const comProjeto = ["seu trampo foda em", "arregaçar em", "DETONAR"];
+const comProjeto = [
+  "seu trampo foda em",
+  "arregaçar em",
+  "DETONAR",
+  "estar toda semana amassando",
+];
 const semProjeto = [
   "amassar os gringo",
   "ser foda",
   "sempre estar ajudando a galera",
+  "ser essa pessoa incrível",
+  "sempre tirar um tempo pra galera",
 ];
 
 const getFromArray = (array: string[]) => {
