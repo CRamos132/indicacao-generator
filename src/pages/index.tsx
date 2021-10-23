@@ -66,6 +66,7 @@ const Home: NextPage = () => {
             <Text>{indicacao}</Text>
             <Button
               type="button"
+              colorScheme="blackAlpha"
               onClick={() => {
                 copyText(indicacao);
               }}
