@@ -16,7 +16,7 @@ const getFromArray = (array: string[]) => {
   return array[selected];
 };
 
-export default function generator({ nome, projeto }: IParams) {
+function createIndicacao({ nome, projeto }: IParams) {
   let indicacao = "";
   const hasIntro = Math.floor(Math.random() * 10) % 2 === 0;
   if (hasIntro) {
@@ -31,5 +31,12 @@ export default function generator({ nome, projeto }: IParams) {
     const motivo = getFromArray(semProjeto);
     indicacao += ` por ${motivo} ${projeto}`;
   }
+
   return indicacao;
+}
+
+export default function generator({ nome, projeto }: IParams) {
+  const empty = ["", "", "", "", "", "", "", "", ""];
+  const indicacoes = empty.map(() => createIndicacao({ nome, projeto }));
+  return indicacoes;
 }

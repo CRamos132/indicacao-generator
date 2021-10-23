@@ -10,10 +10,10 @@ const Home: NextPage = () => {
   const { register, handleSubmit } = useForm();
   const [indicacoes, setIndicacoes] = useState<string[]>([]);
   const onSubmit = ({ nome, projeto }: Record<string, string>) => {
-    const indicacao = generator({ nome, projeto });
-    setIndicacoes([indicacao]);
+    const results = generator({ nome, projeto });
+    setIndicacoes(results);
     // eslint-disable-next-line no-console
-    console.info(indicacao);
+    console.info(results);
   };
   return (
     <Flex
@@ -51,26 +51,30 @@ const Home: NextPage = () => {
         </Box>
         <Button type="submit">Gerar indicações</Button>
       </Flex>
-      {indicacoes.map((indicacao) => (
-        <Flex
-          direction="row"
-          alignItems="center"
-          gridColumnGap="8px"
-          borderRadius="8px"
-          backgroundColor="gray.100"
-          padding="12px"
-        >
-          <Text>{indicacao}</Text>
-          <Button
-            type="button"
-            onClick={() => {
-              copyText(indicacao);
-            }}
+      <Flex direction="column" width="40%" minWidth="300px" gridRowGap="18px">
+        {indicacoes.map((indicacao) => (
+          <Flex
+            direction="row"
+            alignItems="center"
+            justifyContent="space-between"
+            gridColumnGap="8px"
+            borderRadius="8px"
+            backgroundColor="gray.100"
+            padding="12px"
+            width="100%"
           >
-            Copiar
-          </Button>
-        </Flex>
-      ))}
+            <Text>{indicacao}</Text>
+            <Button
+              type="button"
+              onClick={() => {
+                copyText(indicacao);
+              }}
+            >
+              Copiar
+            </Button>
+          </Flex>
+        ))}
+      </Flex>
     </Flex>
   );
 };
